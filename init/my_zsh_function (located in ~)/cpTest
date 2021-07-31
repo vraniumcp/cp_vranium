@@ -1,0 +1,2 @@
+# cpTest FILENAME tests file
+"/Users/varunrajesh/Desktop/cp_vranium/init/cpTest.sh" "${PWD##*/}".cpp
