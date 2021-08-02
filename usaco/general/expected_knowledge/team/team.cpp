@@ -55,20 +55,21 @@ template<class T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1 : 0; }
 template<typename... Args> void read(Args&... args){ ((cin >> args), ...); }
 template<typename... Args> void write(Args... args){ ((cout << args << " "), ...); }
 
-void setIO(string name) {
-	ios_base::sync_with_stdio(0); cin.tie(0);
-	freopen((name+".in").c_str(),"r",stdin);
-	freopen((name+".out").c_str(),"w",stdout);
-}
-
 void solve(){
-
+    int n; read(n);
+    int ans = 0;
+    FOR(n){
+        int x,y,z; read(x,y,z);
+        if(x+y+z >= 2) ++ans;
+    }
+    write(ans);
 }
  
 int main(){
-	// setIO("NAME");
+	ios::sync_with_stdio(0);
 	cin.tie(0);
-	solve();
-	return 0;
+
+    solve();
+    return 0;
 }
  

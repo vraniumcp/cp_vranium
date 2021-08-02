@@ -62,11 +62,16 @@ void setIO(string name) {
 }
 
 void solve(){
-
+    int a,b,x,y; read(a,b,x,y);
+    int ans = abs(b-a);
+    ckmin(ans,abs(a-x)+abs(b-y));
+    ckmin(ans,abs(a-y)+abs(b-x));
+    cout << ans;
 }
  
 int main(){
-	// setIO("NAME");
+	setIO("teleport");
+	ios::sync_with_stdio(0);
 	cin.tie(0);
 	solve();
 	return 0;

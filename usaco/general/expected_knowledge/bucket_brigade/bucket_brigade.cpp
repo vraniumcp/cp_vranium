@@ -62,11 +62,40 @@ void setIO(string name) {
 }
 
 void solve(){
+    ii b,l,r;
+    FOR(i,10){
+        FOR(j,10){
+            char c; read(c);
+            if(c == 'B'){
+                b.first = i;
+                b.second = j;
+            }
+            if(c == 'L'){
+                l.first = i;
+                l.second = j;
+            }
+            if(c == 'R'){
+                r.first = i;
+                r.second = j;
+            }
+        }
+    }
+    // normal case: for an L shape to traverse between them (always possible if not in straight line)
+    // -1 cause edge cow counted twice
+    int ans = abs(l.first - b.first) + abs(l.second - b.second) - 1;
 
+    // edge case: in straight line and rock blocks
+    if(b.first == l.first && l.first == r.first && (min(l.second,b.second) < r.second && max(l.second,b.second) > r.second)){
+        ans += 2;
+    }
+    if(b.second == l.second && l.second == r.second && (min(l.first,b.first) < r.first && max(l.first,b.first) > r.first)){
+        ans += 2;
+    }
+    cout << ans;
 }
  
 int main(){
-	// setIO("NAME");
+	setIO("buckets");
 	cin.tie(0);
 	solve();
 	return 0;

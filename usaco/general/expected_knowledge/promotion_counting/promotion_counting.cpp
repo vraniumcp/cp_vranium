@@ -61,12 +61,20 @@ void setIO(string name) {
 	freopen((name+".out").c_str(),"w",stdout);
 }
 
+// p_change care about number of people who were not plat before that are now
+// g_change care about number of people who were not gold OR PLAT before that are now
+// ...
 void solve(){
-
+    int b1,b2,s1,s2,g1,g2,p1,p2; read(b1,b2,s1,s2,g1,g2,p1,p2);
+    int p_change = p2 - p1;
+    int g_change = g2+p2-(g1+p1);
+    int s_change = g2+p2+s2-(g1+p1+s1);
+    cout << s_change << '\n' << g_change << '\n' << p_change;
 }
  
 int main(){
-	// setIO("NAME");
+	setIO("promote");
+	ios::sync_with_stdio(0);
 	cin.tie(0);
 	solve();
 	return 0;

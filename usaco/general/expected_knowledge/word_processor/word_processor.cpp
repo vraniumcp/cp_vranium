@@ -62,11 +62,24 @@ void setIO(string name) {
 }
 
 void solve(){
-
+    int n,k; read(n,k);
+    int cur_len = 0;
+    FOR(n){
+        string s; read(s);
+        if(cur_len && s.size() + cur_len <= k){
+            cout << " " << s;
+        } else if(s.size() + cur_len <= k){
+            cout << s;
+        } else{
+            cout << '\n' << s;
+            cur_len = 0;
+        }
+        cur_len += s.size();
+    }
 }
  
 int main(){
-	// setIO("NAME");
+	setIO("word");
 	cin.tie(0);
 	solve();
 	return 0;

@@ -62,6 +62,10 @@ void setIO(string name) {
 }
 
 void solve(){
+    vector<int> a(7);
+    FOR(7) cin >> a[i];
+    sort(all(a));
+    cout << a[0] << " " << a[1] << " " << a[6] - a[1] - a[0];
 
 }
  
