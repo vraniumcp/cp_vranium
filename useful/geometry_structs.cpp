@@ -5,7 +5,7 @@ struct Rect{
     }
 };
 
-int interection(Rect a, Rect b){
+int intersection(Rect a, Rect b){
     int x_intersection = max(0,min(a.x2,b.x2) - max(a.x1,b.x1));
     int y_intersection = max(0,min(a.y2,b.y2) - max(a.y1,b.y1));
     return x_intersection*y_intersection;
